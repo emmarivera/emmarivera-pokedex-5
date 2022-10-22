@@ -79,5 +79,5 @@
 .moves__poke {
     display: grid;
     list-style: none;
-    grid-template-columns: repeat(5, mincontent());
+    grid-template-columns: repeat(5, 20%);
 }

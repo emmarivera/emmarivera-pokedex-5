@@ -45,16 +45,18 @@ const Pokedex = () => {
         <Header />
       <header className='pokedex__welcome-container'>
         <p className='pokedex__welcome'>Welcome <span className='pokedex__name-user'>{userName}</span>, here you can find your favorite pokemon.</p>
+        </header>
       <aside className='pokedex__menus'>
         <InputSearch />
         <SelectByType setTypeSelected={setTypeSelected} setPage={setPage}/>
       </aside>
+      <div className="pagination">
         <Pagination 
           page = {page}
           pagesLength={pokemons && Math.ceil(pokemons.length / pokePerPage)} 
           setPage={setPage}
           />
-    </header>
+      </div>
       <main className='card__pokemon'>
         <div className="card-container">
           {
