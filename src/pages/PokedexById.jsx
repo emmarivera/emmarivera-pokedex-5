@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Pokemon404 from '../components/pokedexId/Pokemon404'
+import './styles/pokedexById.css'
 
 const PokedexById = () => {
 
@@ -25,54 +26,80 @@ const PokedexById = () => {
   }
     
   return (
-    <article>
+    <article className='pokemon_id'>
     <header>
-        <img  src={pokemon?.sprites.other['official-artwork'].front_default} alt="" />
+        <div className="imgid-container">
+        <img  className='pokemon_id-img' src={pokemon?.sprites.other['official-artwork'].front_default} alt="" />
+        </div>
+        <div className='titleid__pokemon'>
+        <h3 className=''>#{pokemon?.id}</h3>
+        <h3 className='pokeid__name'>{pokemon?.name}</h3>
+        </div>
+        <ul className='height-weight'>
+        <li className='weight'>Weight <span>{pokemon?.weight}</span></li>
+        <li className='height'>Height <span>{pokemon?.height}</span></li>
+        </ul>
     </header>
-    <section>
-        <h3>{pokemon?.name}</h3>
-        <h3>{pokemon?.id}</h3>
-        <h3>{pokemon?.weight}</h3>
-        <h3>{pokemon?.height}</h3>
+    
        
-       <p>Abilities</p>
-        <ul>
+    <article className="type-abilities">
+        <header className='type'>
+        <div className="label__type">Type </div>
+        <div className="poke__type">
+            {
+                pokemon?.types.map(type => (
+                    <li key={type.slot}>{type.type.name}</li>
+                    ))
+                }
+        </div>
+        </header>
+
+        <header className='abilities'>
+        <div className="label__abilities">Abilities </div>
+        <div className="poke__abilities">
             {
                 pokemon?.abilities.map(ability => (
                     <li key={ability.slot}>{ability.ability.name}</li>
                 ))
             }
-        </ul>
-       
-        <p>Type</p>
-        <ul>
-            {
-                pokemon?.types.map(type => (
-                    <li key={type.slot}>{type.type.name}</li>
-                ))
-            }
-        </ul>
-    </section>
-    <p>Stats</p>
-        <ul>
+        </div>
+        </header>
+    </article>
+    <section>
+    <div className="stats"> 
+     <div className="stats__title">Stats</div>
+     
             {
                 pokemon?.stats.map(stat => (
-                    <li  key={stat.stat.name}>
-                        <span>{stat.stat.name}</span>
-                        <span>{stat.base_stat}</span>
-                    </li>
+                    <div className='stats__poke'  key={stat.stat.name}>
+                        <div className='stats__name'>{stat.stat.name}</div>
+                        <div className='stats__number'>{`${stat.base_stat}/150`}
+                        <div className='stat__bar'>
+	                        <div className='stat__base-stat' style={{width:`${(800 * stat.base_stat)/150}px`}}></div>
+                        </div>
+                        </div>
+        {/* <span className='stat__number'>{stat.base_stat}/150</span>
+<div className='stat__bar'>
+	<span className='stat__base-stat' style={{width:`${(800 * stat.base_stat)/150}px`}}></span>
+</div> */}
+                    </div>                
                 ))
             }
-        </ul>
+
         
-        <p>Movements</p>
-        <ul>
+    </div>
+        </section>
+        
+    <article className="moves">
+        <div className='moves__title'>Movements</div>
+        <div className='moves__poke'>
             {
                 pokemon?.moves.map(move => (
                     <li key={move}>{move.move.name}</li>
                 ))
             }
-        </ul>
+        </div>
+        </article>
         </article>
   )
 }
