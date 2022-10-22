@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Pokemon404 from '../components/pokedexId/Pokemon404'
+import Header from '../components/shared/Header'
 import './styles/pokedexById.css'
 
 const PokedexById = () => {
@@ -27,12 +28,13 @@ const PokedexById = () => {
     
   return (
     <article className='pokemon_id'>
+        <Header />
     <header>
         <div className="imgid-container">
         <img  className='pokemon_id-img' src={pokemon?.sprites.other['official-artwork'].front_default} alt="" />
         </div>
         <div className='titleid__pokemon'>
-        <h3 className=''>#{pokemon?.id}</h3>
+        <h3 className=''>{pokemon?.id}</h3>
         <h3 className='pokeid__name'>{pokemon?.name}</h3>
         </div>
         <ul className='height-weight'>
@@ -75,7 +77,7 @@ const PokedexById = () => {
                         <div className='stats__name'>{stat.stat.name}</div>
                         <div className='stats__number'>{`${stat.base_stat}/150`}
                         <div className='stat__bar'>
-	                        <div className='stat__base-stat' style={{width:`${(800 * stat.base_stat)/150}px`}}></div>
+	                        <div className='stat__base-stat' style={{width:`${(900 * stat.base_stat)/150}px`}}></div>
                         </div>
                         </div>
         {/* <span className='stat__number'>{stat.base_stat}/150</span>

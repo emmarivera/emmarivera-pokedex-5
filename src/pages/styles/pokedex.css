@@ -12,8 +12,6 @@
     max-width: 100%;
     gap: 1px;
     place-content: center;
-    justify-content: center;
-    align-content: center;
     justify-self: center;
     padding-top: 25px;
     padding-bottom: 25px;
@@ -68,8 +66,13 @@
     width: 300px;
     max-width: 100%;
 }
-.pagination {
+.header {
     justify-self: center;
+    padding-bottom: 10px;
+}
+.pagination__footer {
+    justify-self: center;
+    padding-bottom: 30px;
 }
 
 

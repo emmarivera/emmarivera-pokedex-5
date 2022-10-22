@@ -1,6 +1,6 @@
 .card-poke {
     width: 100%;
-    max-width: 290px;
+    max-width: 270px;
     border-radius: 15px;
     overflow: hidden;
     border-width: 10px;
@@ -21,14 +21,14 @@
     transform: translateX(-50%);
 }
 .card-poke__body {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 .card-poke__name {
     text-transform: capitalize;
     text-align: center;
     font-size: 1.7rem;
     font-weight: 500;
-    padding-top: 25px;
+    padding-top: 9px;
 }
 .card-poke__types-container {
     display: flex;
@@ -68,7 +68,7 @@
 .card-poke__stat-label {
     color: #999;
     text-transform: uppercase;
-    font-size: 8.5px;
+    font-size: 8px;
 }
 .card-poke__stat-number {
     font-size: 17px;
