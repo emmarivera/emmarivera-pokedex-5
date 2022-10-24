@@ -29,7 +29,7 @@ const PokedexById = () => {
   return (
     <article className='pokemon_id'>
         <Header />
-    <header>
+        <div className='container__pokeId'>
         <div className="imgid-container">
         <img  className='pokemon_id-img' src={pokemon?.sprites.other['official-artwork'].front_default} alt="" />
         </div>
@@ -41,7 +41,6 @@ const PokedexById = () => {
         <li className='weight'>Weight <span>{pokemon?.weight}</span></li>
         <li className='height'>Height <span>{pokemon?.height}</span></li>
         </ul>
-    </header>
     
        
     <article className="type-abilities">
@@ -62,7 +61,7 @@ const PokedexById = () => {
             {
                 pokemon?.abilities.map(ability => (
                     <li key={ability.slot}>{ability.ability.name}</li>
-                ))
+                    ))
             }
         </div>
         </header>
@@ -90,8 +89,8 @@ const PokedexById = () => {
         
             {/* <span className='stat__number'>{stat.base_stat}/150</span>
     <div className='stat__bar'>
-        <span className='stat__base-stat' style={{width:`${(800 * stat.base_stat)/150}px`}}></span>
-    </div> */}
+    <span className='stat__base-stat' style={{width:`${(800 * stat.base_stat)/150}px`}}></span>
+</div> */}
     <article className="moves">
         <div className='moves__title'>Movements</div>
         <div className='moves__poke'>
@@ -102,6 +101,7 @@ const PokedexById = () => {
             }
         </div>
         </article>
+    </div>
         </article>
   )
 }
