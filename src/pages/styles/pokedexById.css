@@ -53,6 +53,7 @@
 }
 .poke__abilities {
     display: grid;
+    gap: 8px;
     grid-template-columns: repeat(2, minmax(50px, 300px));
 }
 .poke__type {
@@ -78,8 +79,9 @@
     background-color: white;
     padding-top: 15px;
     padding-bottom: 15px;
-    padding-left: 60px;
+    padding-left: 6vh;
     padding-right: 30px;
+    gap: 2vh;
 
 }
 .stats__name {
@@ -117,11 +119,12 @@
 .moves__poke {
     display: grid;
     list-style: none;
-    grid-template-columns: repeat(auto-fit, 150px);
-    padding: 20px;
+    grid-template-columns: repeat(auto-fit, 100px);
+    padding: 10px;
     font-size: 13px;
+    justify-content: center;
 }
 .move__poke {
     padding: 3px;
-    text-align: center  ;
+    text-align: center ;
 }
