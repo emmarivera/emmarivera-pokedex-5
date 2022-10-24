@@ -75,15 +75,11 @@ const PokedexById = () => {
                 pokemon?.stats.map(stat => (
                     <div className='stats__poke'  key={stat.stat.name}>
                         <div className='stats__name'>{stat.stat.name}</div>
-                        <div className='stats__number'>{`${stat.base_stat}/150`}
-                        <div className='stat__bar'>
-	                        <div className='stat__base-stat' style={{width:`${(900 * stat.base_stat)/150}px`}}></div>
+                            <div className='stats__number'>{`${stat.base_stat}/150`}
+                            <div className='stat__bar'>
+                                <div className='stat__base-stat' style={{width:`${(100 * stat.base_stat)/150}%`}}></div>
+                            </div>
                         </div>
-                        </div>
-        {/* <span className='stat__number'>{stat.base_stat}/150</span>
-<div className='stat__bar'>
-	<span className='stat__base-stat' style={{width:`${(800 * stat.base_stat)/150}px`}}></span>
-</div> */}
                     </div>                
                 ))
             }
@@ -92,12 +88,16 @@ const PokedexById = () => {
     </div>
         </section>
         
+            {/* <span className='stat__number'>{stat.base_stat}/150</span>
+    <div className='stat__bar'>
+        <span className='stat__base-stat' style={{width:`${(800 * stat.base_stat)/150}px`}}></span>
+    </div> */}
     <article className="moves">
         <div className='moves__title'>Movements</div>
         <div className='moves__poke'>
             {
                 pokemon?.moves.map(move => (
-                    <li key={move}>{move.move.name}</li>
+                    <li className='move__poke' key={move}>{move.move.name}</li>
                 ))
             }
         </div>
