@@ -27,7 +27,7 @@ const PokedexById = () => {
   }
     
   return (
-    <article className='pokemon_id'>
+    <article className={`pokemon_id bg-${pokemon?.types[0].type.name}`}>
         <Header />
         <div className='container__pokeId'>
         <div className="imgid-container">
